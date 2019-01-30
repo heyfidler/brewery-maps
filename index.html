@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Seattle breweries</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div id="floating-panel">
+			<input class="form-control" type="text" data-bind="value: searchInput, valueUpdate: 'keyup'" placeholder="filter breweries..."> 
+			<div class="list-group" data-bind="foreach: filterList">
+				<a href="#" class="list-group-item list-group-item-action" data-bind="text: $data.name,click: $data.openInfoWindow()"></a>
+			</div>
+		</div>
+		<div id="map"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="js/maps.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDOP7cmMrkhF2YjFwixjr2haS-m6r7s60A&callback=initMap" onerror="googleMapsError()"></script>
+	</body>
+</html>
