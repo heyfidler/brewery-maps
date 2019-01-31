@@ -92,6 +92,10 @@ function ViewModel() {
 				}
 			});
 		}
+		if (openBrewery) {
+			openBrewery.infowindow.close();
+			openBrewery.marker.setAnimation(null);
+		}
 		return visibleBreweries;
     }, this);
 }
@@ -124,4 +128,17 @@ function getLocationByAddress(address, callback) {
 			alert('Geocode was not successful for the following reason: ' + status);
 		}
 	});
+}
+
+function openNav() {
+	$("#mySidenav").css("width", "250px");
+	$("#map").css("marginLeft", "250px");
+	$("#navLink").css("marginLeft", "250px");
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+	$("#mySidenav").css("width", "0");
+	$("#map").css("marginLeft", "0");
+	$("#navLink").css("marginLeft", "0");
 }

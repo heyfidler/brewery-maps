@@ -8,12 +8,14 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	</head>
 	<body>
-		<div id="floating-panel">
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<input class="form-control" type="text" data-bind="value: searchInput, valueUpdate: 'keyup'" placeholder="filter breweries..."> 
 			<div class="list-group" data-bind="foreach: filterList">
 				<a href="#" class="list-group-item list-group-item-action" data-bind="text: $data.name,click: $data.openInfoWindow()"></a>
 			</div>
 		</div>
+		<span id="navLink" onclick="openNav()">&#9776; breweries</span>
 		<div id="map"></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
